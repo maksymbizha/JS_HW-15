@@ -1,12 +1,45 @@
-const arr = [1, 2, 3, 4, 5, 6, 7];
-const item = 5;
+/* Перший варіант запису */
 
-alert(`Массив = [${arr.join(', ')}]`)
+const array = [1,2,3,4,5,6,7,8,9,10];
 
-Array.prototype.remove = function(value) {
-    this.splice(this.indexOf(value), 1);
+alert(`Массив = [${array.join(', ')}]`)
+
+const item = +prompt("Вкажить число якє треба видалети з массиву.");
+
+const index = array.indexOf(item)
+
+if(index !== -1){
+
+    function removeElement (arr , item){
+        array.splice(index,1)
+        return array
+    }
+    const resArray = removeElement(array, item)
+    alert(`Массив = [${resArray.join(', ')}]`)
+
+}  else {
+    alert('Ви ввели не валідне число.')
 }
 
 
-arr.remove(item);
-alert(`Удалили item ${item} з массиву = [${arr.join(', ')}]`);
+/* Другий варіант запису */
+
+// const array = [1,2,3,4,5,6,7,8,9,10];
+//
+// alert(`Массив = [${array.join(', ')}]`)
+//
+// const item = +prompt("Вкажить число якє треба видалети з массиву.");
+//
+// function removeElement (arr , item){
+//     const index = array.indexOf(item)
+//     if(index !== -1){
+//         array.splice(index,1)
+//
+//     } else {
+//         alert('Ви ввели не валідне число.')
+//     }
+//     return array
+// }
+//
+// const resArray = removeElement(array, item)
+// alert(`Массив = [${resArray.join(', ')}]`)
